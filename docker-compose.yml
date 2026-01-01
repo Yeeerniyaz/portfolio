@@ -1,0 +1,14 @@
+version: '3'
+services:
+  portfolio:
+    container_name: my-portfolio
+    build: .
+    restart: always
+    ports:
+      - "8085:80"  # 8085 - порт на сервере, 80 - внутри
+    networks:
+      - npm_default # Сеть твоего Proxy Manager (проверь название в Portainer!)
+
+networks:
+  npm_default:
+    external: true

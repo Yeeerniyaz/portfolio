@@ -1,0 +1,12 @@
+
+
+:root {
+  --ru-font: "Inter", sans-serif;
+  --en-font: "Poppins", sans-serif;
+}
+
+
+body {
+  background-color: #252525; 
+  color: #f16d34;
+}
