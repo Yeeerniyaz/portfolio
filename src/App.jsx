@@ -31,71 +31,106 @@ import {
   IconQuote,
   IconMapPin,
   IconUserCheck,
+  IconBriefcase,
+  IconWorld,
+  IconCloud,
+  IconDeviceDesktop,
+  IconHome,
 } from "@tabler/icons-react";
 
 const projectsData = [
   {
-    id: 5,
-    title: "Mobile Store App",
+    id: 1,
+    title: "Justice Company",
     description:
-      "Кроссплатформенное мобильное приложение на React Native. Удобный каталог, корзина и профиль пользователя.",
-    tags: ["React Native", "Expo", "Mobile"],
-    color: "teal",
-    link: "#",
+      "Минималистичный лендинг для юристов с интегрированной CMS. Управление контентом и ценами через Telegram-бота.",
+    tags: ["Node.js", "Express", "Docker", "Telegram API"],
+    color: "yellow",
+    link: "https://justicecompany.yeee.kz/",
     isNew: true,
-  },
-  {
-    id: 4,
-    title: "DropIt App",
-    description:
-      "Современный файловый менеджер с поддержкой Drag-and-Drop. Быстрая загрузка файлов и удобный интерфейс.",
-    tags: ["React", "Mantine", "Node.js", "Express", "MongoDB"],
-    color: "cyan",
-    link: "https://github.com/Yeeerniyaz/dropit",
+    inDevelopment: false,
+    icon: IconBriefcase,
   },
   {
     id: 2,
-    title: "Smart Mirror VECTOR",
+    title: "Royal Banners",
     description:
-      "IoT-устройство на базе Linux. Интерактивное зеркало с голосовым ассистентом и интеграцией в Умный дом.",
-    tags: ["IoT", "Linux", "Node.js", "React", "React Native", "Python", "SQL"],
+      "Корпоративный портал с эталонным UI/UX. Строгий дизайн, эффект матового стекла и плавная адаптивность.",
+    tags: ["React", "Mantine UI", "Vite"],
     color: "violet",
-    link: "#",
+    link: "https://ukb.yeee.kz/",
+    inDevelopment: false,
+    icon: IconWorld,
   },
   {
-    id: 1,
-    title: "Business Automation CRM",
+    id: 3,
+    title: "ProElectro KZ",
     description:
-      "Комплексная система управления заявками. Админ-панель, аналитика и Telegram-бот.",
-    tags: ["Python", "Flask", "SQL"],
+      "CRM-система для электромонтажного бизнеса. Telegram-бот принимает заявки и автоматизирует работу бригад.",
+    tags: ["Node.js", "React Native", "PostgreSQL"],
     color: "blue",
+    link: "https://t.me/proelectric3_bot",
+    inDevelopment: false,
+    icon: IconBolt,
+  },
+  {
+    id: 4,
+    title: "DropIt Cloud",
+    description:
+      "Аналог Google Drive. Безопасная авторизация, загрузка файлов и возможность делиться ими по ссылке.",
+    tags: ["MongoDB", "Express", "React", "Redux"],
+    color: "cyan",
+    link: "https://github.com/Yeeerniyaz/dropit",
+    inDevelopment: false,
+    icon: IconCloud,
+  },
+  {
+    id: 5,
+    title: "Smart Mirror VECTOR",
+    description:
+      "Умное зеркало. Кастомный интерфейс на React, глубоко настроенный Linux и обновления системы по воздуху.",
+    tags: ["React", "Electron", "Linux", "Bash"],
+    color: "teal",
     link: "#",
+    inDevelopment: true,
+    icon: IconDeviceDesktop,
+  },
+  {
+    id: 6,
+    title: "Smart Home (Wiren Board)",
+    description:
+      "Локальное управление умным домом на базе промышленного ПЛК без зависимости от сторонних серверов.",
+    tags: ["Wiren Board", "Linux", "MQTT", "Modbus"],
+    color: "orange",
+    link: "#",
+    inDevelopment: true,
+    icon: IconHome,
   },
 ];
 
 const skills = [
   {
     icon: IconBrandReact,
-    label: "React.js",
-    desc: "SPA, Hooks, Vite",
+    label: "Frontend",
+    desc: "React.js, Redux, Mantine UI",
     color: "blue",
   },
   {
     icon: IconDeviceMobile,
-    label: "React Native",
-    desc: "iOS & Android Apps",
+    label: "Mobile",
+    desc: "React Native, Expo (iOS & Android)",
     color: "teal",
   },
   {
     icon: IconBrandPython,
     label: "Backend",
-    desc: "Python, Flask, Node.js",
+    desc: "Node.js, Express, PostgreSQL, MongoDB",
     color: "yellow",
   },
   {
     icon: IconCpu,
-    label: "IoT & Hard",
-    desc: "Arduino, ESP32, Linux",
+    label: "IoT & DevOps",
+    desc: "Linux, Docker, Wiren Board, ESP32",
     color: "orange",
   },
 ];
@@ -184,8 +219,7 @@ function App() {
             </Title>
 
             <Text size="xl" c="dimmed" maw={600}>
-              Создаю быстрые сайты, мобильные приложения (React Native) и умную
-              электронику. Превращаю сложные задачи в рабочий код.
+              Привет! Я создаю быстрые сайты, мобильные приложения и интегрирую софт с умной электроникой. Помогаю превращать идеи в рабочий код.
             </Text>
 
             <Group mt="md">
@@ -233,7 +267,7 @@ function App() {
                   100%
                 </Text>
                 <Text size="sm" c="dimmed">
-                  Ответственность
+                  Вовлеченность
                 </Text>
               </div>
             </Group>
@@ -243,18 +277,13 @@ function App() {
             <Grid gutter={50} align="center">
               <Grid.Col span={{ base: 12, md: 6 }}>
                 <Title order={2} mb="md">
-                  Кто такой Ернияз?
+                  Давайте знакомиться!
                 </Title>
                 <Text c="dimmed" mb="md">
-                  Я разработчик из Алматы с бэкграундом инженера-механика. Мой
-                  путь начался не с "Hello World", а с ремонта сложной
-                  электроники и службы в армии, что научило меня железной
-                  дисциплине.
+                  Я Ернияз — разработчик из Алматы с душой инженера. Мой путь в IT начался с увлечения электроникой, сборки механизмов и создания собственных умных устройств. Я люблю, когда сложный код превращается в реальный, осязаемый продукт.
                 </Text>
                 <Text c="dimmed" mb="md">
-                  Я не просто пишу код — я понимаю, как работают системы
-                  изнутри. От пайки микроконтроллеров для Умного дома до
-                  архитектуры сложных облачных приложений.
+                  Для меня программирование — это творчество. Я с одинаковым удовольствием собираю аккуратные интерфейсы на React, пишу логику для Telegram-ботов и настраиваю серверы. Главное — чтобы это решало реальную задачу бизнеса.
                 </Text>
 
                 <Stack gap="xs" mt="lg">
@@ -264,11 +293,11 @@ function App() {
                   </Group>
                   <Group gap="xs">
                     <IconUserCheck size={20} color="orange" />
-                    <Text fw={500}>Возраст: 25 года (Год Змеи 🐍)</Text>
+                    <Text fw={500}>Возраст: 25 лет (Год Змеи 🐍)</Text>
                   </Group>
                   <Group gap="xs">
                     <IconBolt size={20} color="orange" />
-                    <Text fw={500}>Хобби: Авто, Умный дом, Спорт</Text>
+                    <Text fw={500}>Увлечения: IoT, Автомобили, Спорт</Text>
                   </Group>
                 </Stack>
               </Grid.Col>
@@ -281,8 +310,7 @@ function App() {
                   radius="md"
                   p="xl"
                 >
-                  "Я ненавижу глупость и ценю практичность. Моя цель — создавать
-                  решения, которые работают надежно, как швейцарские часы."
+                  "Технологии должны работать на людей, а не наоборот. Моя цель — создавать удобные, красивые и надежные решения, которыми просто приятно пользоваться."
                 </Blockquote>
               </Grid.Col>
             </Grid>
@@ -325,11 +353,10 @@ function App() {
           <Timeline active={2} bulletSize={24} lineWidth={2}>
             <Timeline.Item
               bullet={<IconBolt size={12} />}
-              title="Инженер-электрик & Армия"
+              title="Инженерия & Электроника"
             >
               <Text c="dimmed" size="sm">
-                Работал с электродвигателями и автоматикой. Служба в армии дала
-                понимание, что такое настоящая дисциплина и ответственность.
+                Начинал с работы с электродвигателями и автоматикой. Научился понимать, как системы работают на аппаратном уровне, заложив крепкий инженерный фундамент.
               </Text>
               <Text size="xs" mt={4}>
                 2020 - 2022
@@ -341,7 +368,7 @@ function App() {
               title="IT & IoT Старт"
             >
               <Text c="dimmed" size="sm">
-                Запуск проекта Magic Mirror. Изучение Node.js и Linux.
+                Запуск проекта умного зеркала. Глубокое погружение в Node.js, веб-технологии и администрирование Linux-серверов.
               </Text>
               <Text size="xs" mt={4}>
                 2023 - 2025
@@ -354,7 +381,7 @@ function App() {
               lineVariant="dashed"
             >
               <Text c="dimmed" size="sm">
-                Коммерческая разработка на React, React Native и Python.
+                Коммерческая разработка: создаю веб-сервисы, CRM-системы, Telegram-ботов и современные интерфейсы на React.
               </Text>
               <Text size="xs" mt={4}>
                 Сейчас
@@ -362,13 +389,12 @@ function App() {
             </Timeline.Item>
           </Timeline>
 
-          {/* ID для скролла */}
           <div id="projects">
             <Title order={2} mb="xl" mt={100}>
               Избранные работы
             </Title>
 
-            <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
+            <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg" mt="md">
               {projectsData.map((project) => (
                 <Card
                   key={project.id}
@@ -376,23 +402,29 @@ function App() {
                   padding="lg"
                   radius="md"
                   withBorder
+                  style={{ display: "flex", flexDirection: "column" }}
                 >
-                  <Group justify="space-between" mb="xs">
-                    <Text fw={700} size="lg">
-                      {project.title}
-                    </Text>
+                  <Group justify="space-between" mb="sm" align="flex-start">
+                    <Group gap="sm">
+                      <ThemeIcon size={40} radius="md" variant="light" color={project.color}>
+                        <project.icon size={20} stroke={1.5} />
+                      </ThemeIcon>
+                      <Text fw={700} size="lg">
+                        {project.title}
+                      </Text>
+                    </Group>
                     {project.isNew && (
-                      <Badge color="green" variant="filled">
+                      <Badge color="green" variant="light" size="sm">
                         NEW
                       </Badge>
                     )}
                   </Group>
 
-                  <Text size="sm" c="dimmed" mih={60}>
+                  <Text size="sm" c="dimmed" style={{ flexGrow: 1 }} mb="md" lh={1.5}>
                     {project.description}
                   </Text>
 
-                  <Group gap={6} mt="md" mb="md">
+                  <Group gap={6} mb="md">
                     {project.tags.map((tag) => (
                       <Badge key={tag} color="gray" variant="outline" size="sm">
                         {tag}
@@ -400,18 +432,33 @@ function App() {
                     ))}
                   </Group>
 
-                  <Button
-                    component="a"
-                    href={project.link}
-                    target="_blank"
-                    variant="light"
-                    color={project.color}
-                    fullWidth
-                    radius="md"
-                    mt="auto"
-                  >
-                    Смотреть
-                  </Button>
+                  {project.inDevelopment ? (
+                    <Box mt="auto" w="100%">
+                      <Badge 
+                        color="gray" 
+                        variant="light" 
+                        size="lg" 
+                        w="100%" 
+                        radius="md" 
+                        style={{ textTransform: 'none', paddingTop: 8, paddingBottom: 8, height: 'auto', fontWeight: 600 }}
+                      >
+                        В разработке
+                      </Badge>
+                    </Box>
+                  ) : (
+                    <Button
+                      component="a"
+                      href={project.link}
+                      target="_blank"
+                      variant="light"
+                      color={project.color}
+                      fullWidth
+                      radius="md"
+                      mt="auto"
+                    >
+                      Смотреть проект
+                    </Button>
+                  )}
                 </Card>
               ))}
             </SimpleGrid>
@@ -429,10 +476,10 @@ function App() {
             © 2026 Yerniyaz Talgatuly.
           </Text>
           <Group gap={0} className="hidden sm:flex" visibleFrom="xs">
-            <ActionIcon size="lg" color="gray" variant="subtle">
+            <ActionIcon component="a" href="https://github.com/Yeeerniyaz" target="_blank" size="lg" color="gray" variant="subtle">
               <IconBrandGithub size={18} />
             </ActionIcon>
-            <ActionIcon size="lg" color="gray" variant="subtle">
+            <ActionIcon component="a" href="https://t.me/yeeeerniyaz" target="_blank" size="lg" color="gray" variant="subtle">
               <IconBrandTelegram size={18} />
             </ActionIcon>
           </Group>
