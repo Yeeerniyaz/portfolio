@@ -7,7 +7,7 @@ services:
     ports:
       - "8085:80"  # 8085 - порт на сервере, 80 - внутри
     networks:
-      - npm_default # Сеть твоего Proxy Manager (проверь название в Portainer!)
+      - master-stack_default # Сеть твоего Proxy Manager (проверь название в Portainer!)
 
 networks:
   npm_default:
