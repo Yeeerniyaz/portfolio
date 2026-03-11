@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Указываем поисковикам, где лежит карта сайта
+Sitemap: https://yeee.kz/sitemap.xml

@@ -1,24 +1,28 @@
-# Этап 1: Сборка (используем легкий alpine образ)
-FROM node:22-alpine as builder
+# ==========================================
+# STAGE 1: Сборка проекта (Build)
+# ==========================================
+FROM node:20-alpine as build
 WORKDIR /app
 
-# Сначала копируем только файлы зависимостей для кэширования слоев
+# Копируем манифесты и ставим зависимости (кэшируется слоем)
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
-# Копируем остальной код и собираем проект
+# Копируем весь код и собираем продакшен-билд
 COPY . .
 RUN npm run build
 
-# Этап 2: Production (раздаем статику через Nginx)
-FROM nginx:stable-alpine
+# ==========================================
+# STAGE 2: Раздача через Nginx (Production)
+# ==========================================
+FROM nginx:alpine
 
-# Копируем собранный проект из первого этапа
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Копируем твой кастомный конфиг для поддержки React Router
+# Удаляем дефолтный конфиг Nginx и ставим наш
+RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+# Копируем только папку dist из первого этапа
+COPY --from=build /app/dist /usr/share/nginx/html
 
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

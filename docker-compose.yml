@@ -1,15 +1,9 @@
-version: '3'
-services:
-  portfolio:
-    container_name: my-portfolio
-    build: .
-    restart: always
-    ports:
-      - "8085:80"
-    networks:
-      - proxy_network  # Используем логическое имя внутри файла
+version: '3.8'
 
-networks:
-  proxy_network:
-    external: true
-    name: master-stack_default  # Указываем точное имя, которое требует ошибка
+services:
+  portfolio_web:
+    build: .
+    container_name: yerniyaz_portfolio
+    restart: unless-stopped
+    ports:
+      - "8085:80" # Порт 8080 на сервере смотрит на 80 в контейнере
