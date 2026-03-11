@@ -5,10 +5,11 @@ services:
     build: .
     restart: always
     ports:
-      - "8085:80"  # 8085 - порт на сервере, 80 - внутри
+      - "8085:80"
     networks:
-      - master-stack_default # Сеть твоего Proxy Manager (проверь название в Portainer!)
+      - proxy_network  # Используем логическое имя внутри файла
 
 networks:
-  npm_default:
+  proxy_network:
     external: true
+    name: master-stack_default  # Указываем точное имя, которое требует ошибка
