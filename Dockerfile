@@ -4,12 +4,14 @@ services:
     container_name: my-portfolio
     build: .
     restart: always
+    # Порт 8085, как мы обсуждали раньше, чтобы не конфликтовать
     ports:
       - "8085:80"
     networks:
-      - proxy_network  # Используем логическое имя внутри файла
+      - portfolio_net
 
 networks:
-  proxy_network:
+  portfolio_net:
     external: true
-    name: master-stack_default  # Указываем точное имя, которое требует ошибка
+    # Указываем имя, которое Portainer/Docker реально создал для твоего стека
+    name: master-stack_default
